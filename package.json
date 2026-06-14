@@ -8,8 +8,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "dotenv": "^17.4.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/downnfalls/EnrollmentSystem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/downnfalls/EnrollmentSystem/issues"
+  },
+  "homepage": "https://github.com/downnfalls/EnrollmentSystem#readme",
+  "description": ""
 }

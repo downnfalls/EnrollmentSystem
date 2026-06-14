@@ -13,39 +13,6 @@ const password = process.env.PASSWORD;
 var accessToken = '';
 var refreshToken = '';
 
-async function fetchSubjectData(subjectID) {
-    const url = `https://my.ku.th/myku/api/enroll/openSubjectForEnroll?query=${subjectID}&academicYear=2569&semester=1&campusCode=S&section=`;
-
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'App-Key': apiKey,
-                'x-access-token': accessToken,
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if (!response.ok) {
-            const errorData = await response.json(); 
-            throw new Error(JSON.stringify(errorData));
-        }
-
-        const data = await response.json();
-        console.log('Success:', data);
-    } catch (error) {
-        try {
-            const parsedErrorJSON = JSON.parse(error.message);
-            
-            console.log("The server sent an error!");
-            console.log("Error details:", parsedErrorJSON);
-            
-        } catch (parseError) {
-            console.error("A network or unexpected error occurred:", error.message);
-        }
-    }
-}
-
 async function renewToken() {
   const url = baseUrl + renewTokenUrl;
 
